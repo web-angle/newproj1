@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home_page, auth, client_credentials, success, success1
+from .views import home_page, auth, client_credentials, success
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,8 +25,6 @@ urlpatterns = [
     path('client-creds/', client_credentials),
     path('auth/', auth),
     path('success/', success, name='success'),
-    path('success1/', success1, name='success1'),
-    # path('success/<str:code>/', success),
 ]
 
 if not settings.DEBUG:
