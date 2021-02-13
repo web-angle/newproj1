@@ -23,5 +23,6 @@ def success(request):
 	code = request.GET.get('code')
 	r = requests.get(f'https://bim360connectorauthcode.azurewebsites.net/api/callback?code={code}&is_local=true')
 	data = r.json()
+	data['code'] = str(code)
 	Data.objects.create(**data)
 	return render(request, 'success.html', {})
